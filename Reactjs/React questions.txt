@@ -1,0 +1,144 @@
+ 
+Basic------------------------------------------------------------------------------------------------------------------
+What is React?
+
+Answer: React is an open-source JavaScript library developed by 
+Facebook for building user interfaces, especially single-page applications. 
+It allows developers to build reusable UI components, manage the view layer of an application, 
+and update the UI efficiently through its virtual DOM.
+
+
+What is a component in React?
+Answer: A component in React is a reusable, independent piece of UI that can accept inputs (props) and manage its own state. Components can be functional or class-based, 
+and they help break down the UI into smaller, manageable parts.
+Functional Components: These are stateless components defined as functions that accept props and return JSX.
+Class Components: These are stateful components defined using ES6 classes, which manage internal state and lifecycle methods.
+
+What is the difference between functional and class components?
+Answer:
+
+Functional Components:
+Are stateless (though with hooks like useState, they can manage state).
+Defined as a JavaScript function.
+No access to lifecycle methods unless using hooks.
+Class Components:
+Can manage state and lifecycle methods directly.
+Defined using the ES6 class syntax.
+Can have more complex logic compared to functional components (before hooks were introduced).
+
+What is JSX?
+Answer: JSX (JavaScript XML) is a syntax extension for JavaScript that looks similar to HTML. It's used in React to describe what the UI should look like. Browsers don’t understand JSX directly, so it is transpiled into regular JavaScript using tools like Babel.
+
+What are props in React?
+Answer: Props (short for "properties") are inputs to React components. They are used to pass data from a parent component to a child component. Props are immutable, meaning a child component cannot modify them.
+
+What is state in React?
+Answer: State is an object that holds information about a component that may change over time. Unlike props, the state is local to the component and can be modified using the setState method (in class components) or useState hook (in functional components).
+
+What is the difference between state and props?
+Answer:
+
+State:
+Managed within the component.
+Can be changed inside the component using setState (class components) or useState (functional components).
+Local to the component.
+Props:
+Passed down from parent to child components.
+Immutable (cannot be changed by the receiving component).
+Used to pass data and event handlers.
+
+What is useEffect hook in React?
+Answer: useEffect is a hook that lets you perform side effects (e.g., fetching data, updating the DOM) in functional components. It’s similar to lifecycle methods like componentDidMount, componentDidUpdate, and componentWillUnmount in class components.
+
+intermidiate -----------------------------------------------------------------------------------------------------------
+
+What is the Virtual DOM?
+Answer: The Virtual DOM is a lightweight copy of the real DOM. React uses the virtual DOM to optimize updates by minimizing direct manipulation of the real DOM. When a change occurs, React compares the virtual DOM to the previous version, identifies the differences (a process called "reconciliation"), and then updates only the parts of the real DOM that changed.
+
+What is conditional rendering in React?
+Conditional rendering in React involves selectively rendering components based on specified conditions. By evaluating these conditions, developers can control which components are displayed, allowing for dynamic and responsive user interfaces in React applications.
+
+Let us look at this sample code to understand conditional rendering. 
+
+{isLoggedIn == false ? <DisplayLoggedOut /> : <DisplayLoggedIn />}
+
+What is react router?
+React Router is a standard library for routing in React. It enables the navigation among views of various components in a React Application, allows changing the browser URL, and keeps the UI in sync with the URL.
+
+To install react router type the following command.
+. Explain the lifecycle methods of components
+A React Component can go through four stages of its life as follows. 
+
+Initialization: This is the stage where the component is constructed with the given Props and default state. This is done in the constructor of a Component Class.
+Mounting: Mounting is the stage of rendering the JSX returned by the render method itself.
+Updating: Updating is the stage when the state of a component is updated and the application is repainted.
+Unmounting: As the name suggests Unmounting is the final step of the component lifecycle where the component is removed from the page.
+
+
+ What is Context API, and when should you use it?
+Answer: The React Context API allows you to pass data (such as a theme, user info, or authentication status) through the component tree without having to pass props down manually at every level. It’s useful when you need to share global data across many components, eliminating "prop drilling."
+
+Example of creating a context:
+
+jsx
+Copy code
+const ThemeContext = React.createContext('light');
+
+const App = () => (
+    <ThemeContext.Provider value="dark">
+        <ChildComponent />
+    </ThemeContext.Provider>
+);
+
+const ChildComponent = () => {
+    const theme = useContext(ThemeContext);
+    return <p>Current Theme: {theme}</p>;
+};
+
+What is prop drilling, and how do you avoid it?
+Answer: Prop drilling is the process of passing data from a parent component to a deeply nested child component through multiple intermediate components that don't need the data themselves. This can make the code messy and harder to maintain.
+
+To avoid prop drilling:
+
+Use Context API to pass data directly to the components that need it.
+Consider state management libraries like Redux, which provide a centralized store for the entire app’s state.
+
+What is memoization in React, and how does React.memo work?
+Answer: Memoization in React is the process of caching the result of a function to avoid unnecessary recalculations. React.memo is a higher-order component that prevents functional components from re-rendering if their props haven't changed, improving performance.
+
+advanced / experienced
+
+What are Suspense and React.lazy, and how do they enable code splitting?
+Answer:
+
+React.lazy: Allows you to lazy-load components, meaning components are only loaded when they are needed. This helps in reducing the initial bundle size, improving application load times.
+Suspense: Works with React.lazy to display a fallback (like a loading spinner) while the lazy-loaded component is being fetched.
+
+What is React's Context API, and how does it solve the problem of prop drilling?
+Answer: The Context API allows you to create global state that can be passed to any component in your app without the need for prop drilling (passing props down through multiple layers of components).
+
+Provider: Wraps your component tree and provides the context value to all components within its scope.
+Consumer: Allows components to access the context value without needing to pass it down manually through props.
+
+What is the significance of useReducer hook, and how does it differ from useState?
+Answer: useReducer is a hook used to handle more complex state logic than useState. It’s particularly useful when the state transitions are more complicated and involve multiple actions or when state depends on the previous state.
+
+useState: Suitable for simple state updates.
+useReducer: Better for complex state logic or multiple state transitions, similar to managing state in Redux.
+
+What is createSlice in Redux Toolkit, and how does it simplify Redux?
+Answer: createSlice is a function provided by Redux Toolkit that simplifies the process of writing reducers and action creators. It generates actions and reducers together in a single place.
+
+Benefits:
+Automatically generates action creators and action types.
+Allows direct mutation of state, thanks to Immer.
+Organizes all the logic for a particular feature (like actions and reducers) in a single place
+
+
+How does configureStore improve store setup in Redux Toolkit?
+Answer: configureStore simplifies the store setup process by:
+
+Automatically combining reducers.
+Including Redux middleware like redux-thunk by default.
+Enabling Redux DevTools by default in development mode.
+Providing an easy way to add middleware and enhancer

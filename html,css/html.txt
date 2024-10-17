@@ -1,0 +1,196 @@
+Here are some basic to intermediate HTML interview questions along with brief answers to help you prepare:
+
+### 1. **What is the `<head>` tag, and what is its purpose?**
+   **Answer:**  
+   The `<head>` tag contains meta-information about the document that is not displayed to the user. This includes the document's title, links to stylesheets, metadata, and other resources like scripts and fonts. The `<head>` section helps configure how the page behaves and is rendered in the browser.
+
+---
+
+### 2. **What is the `<meta>` tag, and how is it used?**
+   **Answer:**  
+   The `<meta>` tag provides metadata about the HTML document. It is typically used inside the `<head>` section to specify character sets, page descriptions, keywords, and viewport settings for responsive design.
+
+   Example:
+   ```html
+   <meta charset="UTF-8">
+   <meta name="description" content="A short description of the page.">
+   ```
+
+---
+
+### 3. **What is the use of the `viewport` meta tag?**
+   **Answer:**  
+   The `viewport` meta tag controls the layout on mobile browsers. It ensures that the website is responsive and scales correctly on different devices.
+
+   Example:
+   ```html
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   ```
+   - `width=device-width`: Sets the width of the page to follow the screen-width of the device.
+   - `initial-scale=1.0`: Sets the initial zoom level when the page is loaded.
+
+---
+
+### 4. **Where should the CSS link be placed in an HTML document, and why?**
+   **Answer:**  
+   The CSS file should be linked inside the `<head>` tag using a `<link>` element. This ensures that the styles are applied before the page content is loaded, preventing any unstyled or "flash of unstyled content" (FOUC) during the page load.
+
+   Example:
+   ```html
+   <link rel="stylesheet" href="styles.css">
+   ```
+
+---
+
+### 5. **Where should JavaScript files be linked in an HTML document, and why?**
+   **Answer:**  
+   JavaScript files can be linked in two places:
+   - **In the `<head>` tag:** If the script is small and must be loaded before rendering any part of the page.
+   - **At the bottom of the `<body>` tag (recommended):** This is to ensure that the HTML content loads first, improving page load times and avoiding blocking the rendering of the page.
+
+   Example at the end of the `<body>`:
+   ```html
+   <script src="script.js"></script>
+   ```
+
+   Alternatively, if you link the JavaScript in the `<head>`, you can use the `defer` attribute to prevent blocking the page load:
+   ```html
+   <script src="script.js" defer></script>
+   ```
+
+---
+
+### 6. **What is the difference between the `<div>` and `<span>` tags?**
+   **Answer:**  
+   - **`<div>`**: A block-level element used to group content. It takes up the full width available.
+     Example:
+     ```html
+     <div>This is a block-level element.</div>
+     ```
+   - **`<span>`**: An inline element used to group small portions of text or elements within a block. It does not start on a new line.
+     Example:
+     ```html
+     <span>This is an inline element.</span>
+     ```
+
+---
+
+### 7. **What is the `alt` attribute in an `<img>` tag, and why is it important?**
+   **Answer:**  
+   The `alt` attribute provides alternative text for images if the image fails to load or if a user is using a screen reader. It improves accessibility and provides better SEO.
+
+   Example:
+   ```html
+   <img src="image.jpg" alt="A descriptive image of the content.">
+   ```
+
+---
+
+### 8. **What is the difference between `id` and `class` attributes in HTML?**
+   **Answer:**  
+   - **`id`**: A unique identifier for a single HTML element. An `id` should only be used once per page. It's often used for targeting elements in JavaScript or CSS.
+     Example:
+     ```html
+     <div id="header">This is the header</div>
+     ```
+   - **`class`**: A reusable attribute that can be applied to multiple elements. It’s mainly used for styling or targeting groups of elements with the same class.
+     Example:
+     ```html
+     <div class="box">Box 1</div>
+     <div class="box">Box 2</div>
+     ```
+
+---
+
+### 9. **What is semantic HTML, and why is it important?**
+   **Answer:**  
+   Semantic HTML refers to using HTML tags that convey the meaning or structure of the content, such as `<article>`, `<section>`, `<header>`, `<footer>`, and `<nav>`. It improves the readability of the code, helps search engines better understand the content, and enhances accessibility for screen readers.
+
+   Example of semantic tags:
+   ```html
+   <article>
+     <header>This is an article header</header>
+     <p>This is an article body</p>
+   </article>
+   ```
+
+---
+
+### 10. **What is the `<script>` tag, and what are its attributes?**
+   **Answer:**  
+   The `<script>` tag is used to embed or reference JavaScript code within an HTML document.
+
+   Key attributes:
+   - `src`: Specifies the external JavaScript file.
+   - `async`: Loads the script asynchronously, meaning it doesn't block the HTML parsing.
+   - `defer`: Ensures that the script runs after the HTML has been fully parsed.
+
+   Example:
+   ```html
+   <script src="app.js" defer></script>
+   ```
+
+---
+
+### 11. **What is the difference between the `<title>` and `<h1>` tags?**
+   **Answer:**  
+   - **`<title>`**: Appears in the browser's title bar or tab and is used for SEO and accessibility purposes.
+   - **`<h1>`**: Represents the main heading on the page. It's visible to users and indicates the most important content on the page.
+
+   Example:
+   ```html
+   <title>Page Title</title>
+   <h1>Main Heading</h1>
+   ```
+
+---
+
+### 12. **What is the difference between a relative URL and an absolute URL?**
+   **Answer:**  
+   - **Relative URL**: A URL that is relative to the current page or domain.
+     Example:
+     ```html
+     <a href="about.html">About Us</a>
+     ```
+   - **Absolute URL**: A full path URL that includes the protocol (e.g., `https://`), domain name, and the complete path to the resource.
+     Example:
+     ```html
+     <a href="https://www.example.com/about.html">About Us</a>
+     ```
+
+---
+
+### 13. **What is the difference between an inline and block-level element?**
+   **Answer:**  
+   - **Inline Element**: Takes up only as much width as its content and does not start on a new line. Examples include `<span>`, `<a>`, `<img>`.
+   - **Block-level Element**: Takes up the full width available and starts on a new line. Examples include `<div>`, `<p>`, `<h1>`.
+
+---
+
+### 14. **What is the `<link>` tag used for?**
+   **Answer:**  
+   The `<link>` tag is used to link external resources, such as stylesheets, to the HTML document. It is commonly placed inside the `<head>` tag.
+
+   Example:
+   ```html
+   <link rel="stylesheet" href="styles.css">
+   ```
+
+---
+
+### 15. **What is the `<form>` tag, and what are its key attributes?**
+   **Answer:**  
+   The `<form>` tag is used to collect user input. Key attributes include:
+   - `action`: Specifies where to send the form data upon submission.
+   - `method`: Defines the HTTP method (`GET` or `POST`) used when submitting the form.
+   - `enctype`: Specifies the encoding type for the form data (e.g., `multipart/form-data` for file uploads).
+
+   Example:
+   ```html
+   <form action="/submit" method="post">
+     <input type="text" name="username">
+     <input type="submit" value="Submit">
+   </form>
+   ```
+
+These questions and answers will help you review basic to intermediate HTML concepts and prepare for HTML-related interviews.

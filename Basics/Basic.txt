@@ -1,0 +1,110 @@
+Here are some key Object-Oriented Programming (OOP) interview questions along with their answers:
+
+### 1. **What is Object-Oriented Programming (OOP), and why is it important?**
+   **Answer:**  
+   OOP is a programming paradigm based on the concept of "objects," which can contain data (attributes) and code (methods). It emphasizes the principles of abstraction, encapsulation, inheritance, and polymorphism. OOP is important because it promotes code reusability, scalability, and maintainability, making complex software systems easier to develop and manage.
+
+---
+
+### 2. **What is a class and an object?**
+   **Answer:**  
+   A **class** is a blueprint or template for creating objects. It defines properties (attributes) and behaviors (methods) that the objects created from the class will have.  
+   An **object** is an instance of a class. It represents a specific example of the class and contains actual values for the class’s attributes.
+
+---
+
+### 3. **What are the four main pillars of OOP?**
+   **Answer:**  
+   The four main pillars of OOP are:
+   - **Encapsulation:** Bundling data (attributes) and methods that operate on the data within a single unit, usually a class, and restricting access to some of the object’s components.
+   - **Abstraction:** Hiding the complex implementation details and showing only the essential features of the object.
+   - **Inheritance:** A mechanism by which one class can inherit properties and behaviors from another class.
+   - **Polymorphism:** The ability to take many forms, typically by allowing methods to perform different tasks based on the object that invokes them.
+
+---
+
+### 4. **What is encapsulation, and why is it used?**
+   **Answer:**  
+   **Encapsulation** is the concept of wrapping data (variables) and methods that manipulate the data into a single unit or class. It restricts direct access to some of an object’s components, usually through the use of access modifiers like `private`, `protected`, and `public`. It is used to protect an object's integrity by preventing outside code from making unauthorized changes to the internal state of an object.
+
+---
+
+### 5. **What is abstraction in OOP?**
+   **Answer:**  
+   **Abstraction** is the concept of hiding the complex implementation details of a system and exposing only the necessary parts to the user. It allows developers to focus on what an object does instead of how it does it. For example, a car’s steering wheel abstracts the complex machinery behind it by allowing the driver to steer without knowing the intricate details of the steering mechanism.
+
+---
+
+### 6. **How do abstract classes and interfaces provide abstraction?**
+   **Answer:**  
+   An **abstract class** is a class that cannot be instantiated on its own and often includes both concrete methods (with implementation) and abstract methods (without implementation). Abstract classes allow partial abstraction.  
+   An **interface** only contains method signatures without any implementation. Classes that implement an interface must provide implementations for all its methods, enforcing complete abstraction.
+
+---
+
+### 7. **What is the difference between an abstract class and an interface?**
+   **Answer:**  
+   - **Abstract Class:** Can have both abstract methods and methods with implementations. It can also have instance variables and can provide shared code to subclasses. A class can inherit from only one abstract class.
+   - **Interface:** Can only have method declarations (no implementation) and constants. A class can implement multiple interfaces, thus supporting multiple inheritance.
+
+---
+
+### 8. **What is inheritance in OOP?**
+   **Answer:**  
+   **Inheritance** is a mechanism in OOP where a new class (derived class) inherits the properties and behaviors (methods) of an existing class (base class). This promotes code reusability. The derived class can also add new properties or methods or override existing ones from the base class.
+
+---
+
+### 9. **What is polymorphism in OOP?**
+   **Answer:**  
+   **Polymorphism** is the ability of objects of different classes to be treated as instances of the same class through inheritance. There are two types of polymorphism:
+   - **Compile-time polymorphism (Method Overloading):** When multiple methods with the same name exist but have different parameter types or counts.
+   - **Runtime polymorphism (Method Overriding):** When a subclass provides a specific implementation of a method already defined in its parent class.
+
+---
+
+### 10. **What is method overloading?**
+   **Answer:**  
+   **Method overloading** is a form of compile-time polymorphism where multiple methods with the same name but different parameter lists exist within the same class. The method that gets called is determined by the number or type of arguments passed.
+
+---
+
+### 11. **What is method overriding?**
+   **Answer:**  
+   **Method overriding** is a form of runtime polymorphism where a subclass provides a specific implementation for a method that is already defined in its parent class. The overridden method in the child class has the same name, return type, and parameters as the method in the parent class.
+
+---
+
+### 12. **What is the difference between overloading and overriding?**
+   **Answer:**
+   - **Overloading:** Happens at compile-time, and involves methods with the same name but different parameters.
+   - **Overriding:** Happens at runtime, and involves redefining a method from the parent class in a subclass with the same signature.
+
+---
+
+### 13. **What is the diamond problem in multiple inheritance?**
+   **Answer:**  
+   The **diamond problem** occurs in languages like C++ when a class inherits from two classes that both have the same method from a common ancestor class, leading to ambiguity about which method should be inherited.  
+   Some languages like **Java** solve this by disallowing multiple inheritance, while others like **C++** use the concept of **virtual inheritance** to resolve the conflict.
+
+---
+
+### 14. **What is the difference between deep copy and shallow copy in OOP?**
+   **Answer:**  
+   A **shallow copy** copies the object's values but not the objects referenced by it. Changes to the referenced objects in the original will reflect in the copy.  
+   A **deep copy** creates a copy of the object along with all the objects it references, so changes to the original object's references will not affect the deep copy.
+
+---
+
+### 15. **What are the SOLID principles in OOP?**
+   **Answer:**  
+   **SOLID** is an acronym for five design principles that ensure good OOP design:
+   - **S**ingle Responsibility Principle (SRP): A class should have only one responsibility.
+   - **O**pen/Closed Principle (OCP): A class should be open for extension but closed for modification.
+   - **L**iskov Substitution Principle (LSP): Objects of a superclass should be replaceable with objects of a subclass without affecting the application.
+   - **I**nterface Segregation Principle (ISP): A client should not be forced to implement interfaces they don't use.
+   - **D**ependency Inversion Principle (DIP): High-level modules should not depend on low-level modules; both should depend on abstractions.
+
+---
+
+These answers cover foundational OOP concepts and provide a solid understanding of how OOP principles are applied in real-world programming.

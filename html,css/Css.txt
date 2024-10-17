@@ -1,0 +1,272 @@
+Here are some basic to intermediate CSS interview questions along with answers to help you prepare:
+
+### 1. **What is CSS, and what is it used for?**
+   **Answer:**  
+   CSS (Cascading Style Sheets) is a stylesheet language used to describe the presentation of HTML documents. It controls how elements on the web page are displayed, including their layout, color, fonts, and responsiveness.
+
+---
+
+### 2. **What are the different ways to apply CSS to a web page?**
+   **Answer:**  
+   There are three ways to apply CSS:
+   - **Inline CSS:** Applied directly to an HTML element using the `style` attribute.
+     ```html
+     <p style="color: red;">This is red text.</p>
+     ```
+   - **Internal CSS:** Defined inside a `<style>` tag within the `<head>` section of the HTML document.
+     ```html
+     <head>
+       <style>
+         p { color: red; }
+       </style>
+     </head>
+     ```
+   - **External CSS:** A separate `.css` file linked using the `<link>` tag in the HTML document’s `<head>`.
+     ```html
+     <link rel="stylesheet" href="styles.css">
+     ```
+
+---
+
+### 3. **What is the difference between `class` and `id` selectors in CSS?**
+   **Answer:**  
+   - **Class selector (`.`):** Targets multiple elements with the same class name. Use a dot (`.`) followed by the class name.
+     ```css
+     .container {
+       background-color: lightblue;
+     }
+     ```
+     ```html
+     <div class="container">Content 1</div>
+     <div class="container">Content 2</div>
+     ```
+
+   - **ID selector (`#`):** Targets a single unique element with a specific ID. Use a hash (`#`) followed by the ID name.
+     ```css
+     #header {
+       background-color: yellow;
+     }
+     ```
+     ```html
+     <div id="header">This is a header</div>
+     ```
+
+---
+
+### 4. **What is the box model in CSS?**
+   **Answer:**  
+   The CSS **box model** represents the structure of an HTML element as a rectangular box consisting of four areas:
+   - **Content**: The actual content inside the element.
+   - **Padding**: Space between the content and the border.
+   - **Border**: The line surrounding the padding (or content if there’s no padding).
+   - **Margin**: Space outside the border, separating the element from others.
+
+   Example:
+   ```css
+   div {
+     width: 200px;
+     padding: 10px;
+     border: 5px solid black;
+     margin: 20px;
+   }
+   ```
+
+---
+
+### 5. **What are `margin` and `padding` in CSS, and what is the difference between them?**
+   **Answer:**
+   - **Margin**: Space outside the element’s border. It creates space between the element and adjacent elements.
+   - **Padding**: Space between the element’s content and its border.
+
+   The key difference is that `margin` affects the spacing outside the element, while `padding` affects the spacing inside the element, pushing the content away from the border.
+
+---
+
+### 6. **What are pseudo-classes in CSS, and can you provide an example?**
+   **Answer:**  
+   A **pseudo-class** is a keyword added to a selector that specifies a special state of the selected elements. For example:
+   - `:hover` applies styles when the user hovers over an element.
+   - `:focus` applies styles when an element (like a form field) is focused.
+
+   Example:
+   ```css
+   a:hover {
+     color: red;
+   }
+   input:focus {
+     background-color: yellow;
+   }
+   ```
+
+---
+
+### 7. **What is a CSS pseudo-element, and how does it differ from a pseudo-class?**
+   **Answer:**  
+   A **pseudo-element** allows you to style specific parts of an element, such as the first letter, line, or inserting content before or after an element. It differs from pseudo-classes, which style elements in specific states.
+
+   Example of pseudo-element (`::before` and `::after`):
+   ```css
+   p::first-letter {
+     font-size: 2em;
+     color: blue;
+   }
+   div::before {
+     content: "Note: ";
+     color: red;
+   }
+   ```
+
+---
+
+### 8. **What is the difference between `relative`, `absolute`, `fixed`, and `sticky` positioning in CSS?**
+   **Answer:**
+   - **Relative**: Positioned relative to its normal position in the document flow. Other elements are not affected.
+     ```css
+     .relative {
+       position: relative;
+       top: 10px;
+     }
+     ```
+
+   - **Absolute**: Positioned relative to its closest positioned (not static) ancestor or the viewport if none exists. It is removed from the normal document flow.
+     ```css
+     .absolute {
+       position: absolute;
+       top: 50px;
+       left: 100px;
+     }
+     ```
+
+   - **Fixed**: Positioned relative to the viewport and remains in the same place even when the page is scrolled.
+     ```css
+     .fixed {
+       position: fixed;
+       top: 10px;
+       right: 10px;
+     }
+     ```
+
+   - **Sticky**: A hybrid between relative and fixed. It toggles between relative and fixed, depending on the scroll position.
+     ```css
+     .sticky {
+       position: sticky;
+       top: 0;
+     }
+     ```
+
+---
+
+### 9. **What is Flexbox, and how is it different from traditional layout techniques?**
+   **Answer:**  
+   **Flexbox** (Flexible Box Layout) is a layout model that allows easy alignment and distribution of space among items in a container, even when their size is unknown. It simplifies creating complex layouts, unlike traditional techniques like float, inline-block, or table layouts, which require more code and can be harder to manage.
+
+   Example:
+   ```css
+   .container {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+   }
+   ```
+
+---
+
+### 10. **What is the difference between `display: none` and `visibility: hidden` in CSS?**
+   **Answer:**
+   - **`display: none`**: Completely removes the element from the document, meaning it doesn't take up any space on the page.
+   - **`visibility: hidden`**: Hides the element but still occupies space in the document.
+
+   Example:
+   ```css
+   .hidden {
+     visibility: hidden;
+   }
+
+   .none {
+     display: none;
+   }
+   ```
+
+---
+
+### 11. **What is CSS Grid, and how is it different from Flexbox?**
+   **Answer:**  
+   **CSS Grid** is a two-dimensional layout system that allows you to define rows and columns, giving you control over both the horizontal and vertical aspects of the layout. It is more suitable for creating grid-like layouts, whereas **Flexbox** is one-dimensional, focusing on either rows or columns (not both).
+
+   Example:
+   ```css
+   .container {
+     display: grid;
+     grid-template-columns: 1fr 2fr;
+     grid-gap: 10px;
+   }
+   ```
+
+---
+
+### 12. **What are media queries, and how are they used in responsive design?**
+   **Answer:**  
+   **Media queries** are used to apply different styles to an element based on the device’s characteristics, such as width, height, and orientation. They are essential for creating responsive designs that adapt to various screen sizes.
+
+   Example:
+   ```css
+   @media screen and (max-width: 768px) {
+     body {
+       background-color: lightblue;
+     }
+   }
+   ```
+
+---
+
+### 13. **What is a `z-index`, and how does it work in CSS?**
+   **Answer:**  
+   The `z-index` property controls the stacking order of elements that overlap. Elements with a higher `z-index` value are placed in front of those with lower values. `z-index` only works on elements that have a position value other than `static`.
+
+   Example:
+   ```css
+   .box1 {
+     position: absolute;
+     z-index: 10;
+   }
+
+   .box2 {
+     position: absolute;
+     z-index: 5;
+   }
+   ```
+
+---
+
+### 14. **What are CSS transitions, and how do you use them?**
+   **Answer:**  
+   CSS **transitions** allow you to change property values smoothly (over a given duration) rather than instantly.
+
+   Example:
+   ```css
+   div {
+     width: 100px;
+     height: 100px;
+     background-color: blue;
+     transition: width 2s;
+   }
+
+   div:hover {
+     width: 200px;
+   }
+   ```
+
+   In this example, when you hover over the `div`, its width will change from 100px to 200px over 2 seconds.
+
+---
+
+### 15. **What is the `@keyframes` rule in CSS, and how do you use it for animations?**
+   **Answer:**  
+   The `@keyframes` rule specifies the intermediate steps in an animation sequence. It defines the styles at different points during the animation.
+
+   Example:
+   ```css
+   @keyframes myAnimation {
+     from { background-color: red; }
+     to { background-color: yellow; }
+  
